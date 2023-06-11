@@ -21,7 +21,7 @@ def main():
     min_score, max_score = 0, 100
     student_score = randint(min_score, max_score)
     category = score_parameter(min_score, max_score, student_score)
-    print(f"Your Score is {student_score} {category}")
+    print(f"Your Score {student_score} {category}")
 
 
 def score_parameter(low, high, score):
