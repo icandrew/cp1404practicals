@@ -22,7 +22,7 @@ def main():
     min_score = 0
     max_score = 100
     category = score_parameter(min_score, max_score, student_score)
-    print(category)
+    print(f"Your Score is {category}")
 
 
 def score_parameter(low, high, score):
