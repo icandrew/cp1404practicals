@@ -14,18 +14,26 @@
 """"
 Using Function Definition
 """
+from random import randint
 
 
-def score_range(low, high):
-    score = float(input("Enter the score: "))
+def main():
+    student_score = float(input("Enter the score: "))
+    min_score = 0
+    max_score = 100
+    category = score_parameter(min_score, max_score, student_score)
+    print(category)
+
+
+def score_parameter(low, high, score):
     if score < low or score > high:
-        print("Invalid")
+        return "Invalid"
     elif score >= 90:
-        print("Excellent")
+        return "Excellent"
     elif score >= 50:
-        print("Passable")
+        return "Passable"
     else:
-        print("Bad")
+        return "Bad"
 
 
-score_range(0, 100)
+main()
