@@ -16,3 +16,10 @@ print(f"The last number is {numbers[-1]} ")  # display the last element in the l
 print(f"The smallest number is {min(numbers)} ")  # display the minimum value in the list
 print(f"The larges number is {max(numbers)} ")  # display the maximum value in the list
 print(f"The average number is {sum(numbers) / len(numbers)} ")  # display the average number of the list
+
+
+"""
+Woefully inadequate security checker
+"""
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
+             'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
