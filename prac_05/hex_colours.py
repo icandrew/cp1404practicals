@@ -11,7 +11,7 @@ color_name = input("Color Name:").lower()
 while color_name != "":
     colors = (color.lower() for color in COLOR_TO_HEX.keys())
     if color_name in colors:
-        print(f"{color_name} is available")
+        print(f"{color_name} hex code {COLOR_TO_HEX.get(color_name)}")
         color_name = input("Enter Color: ").lower()
     else:
         print("Invalid Color")
