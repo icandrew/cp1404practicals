@@ -1,4 +1,5 @@
 current_year = 2023
+vintage_year = 50
 
 
 class Guitar:
@@ -12,3 +13,6 @@ class Guitar:
 
     def get_age(self):
         return current_year - self.year
+
+    def is_vintage(self):
+        return self.get_age() >= vintage_year
