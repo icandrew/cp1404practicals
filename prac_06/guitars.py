@@ -16,8 +16,11 @@ def main():
         guitars.sort()
         print("These are my guitars:")
         for i, guitar in enumerate(guitars, start=1):
+            vintage_string = ""
+            if guitar.is_vintage():
+                vintage_string = " (vintage)"
             max_characters = max(len(guitar.name) for guitar in guitars)
-            print(f"Guitar {i}: {guitar.name:{max_characters}} ({guitar.year}), worth $ {guitar.cost:.2f}")
+            print(f"Guitar {i}: {guitar.name:{max_characters}} ({guitar.year}), worth $ {guitar.cost:.2f}{vintage_string}")
 
 
 
