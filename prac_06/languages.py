@@ -1,6 +1,6 @@
 """
 CP1404 Practical 06 - Programming Language
-Time to complete -
+Time to complete - 49 minutes
 """
 
 from prac_06.programming_language import ProgrammingLanguage
