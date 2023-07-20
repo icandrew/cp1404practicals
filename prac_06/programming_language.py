@@ -13,6 +13,9 @@ class ProgrammingLanguage:
             reflection_string = "No"
         return f"{self.name}, {self.typing} Typing, Reflection={reflection_string}, First appeared in {self.year}"
 
+    def is_dynamic(self):
+        return self.typing == "Dynamic"
+
 
 
 
