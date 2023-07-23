@@ -27,8 +27,15 @@ def main():
         name = input("Guitar name: ")
         if not name:
             break
-
     print("Thank you!")
+    update_guitar_file(guitars)
+
+
+def update_guitar_file(guitars):
+    out_file = open('guitars.csv', 'w')
+    for guitar in guitars:
+        print(guitar.name, guitar.year, guitar.cost, sep=',', file=out_file)
+    out_file.close()
 
 
 def add_new_guitar(guitars, name):
