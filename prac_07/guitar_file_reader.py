@@ -1,3 +1,7 @@
+"""
+Complete first part of More Guitars exercise
+"""
+
 from guitar import Guitar
 
 
