@@ -6,7 +6,9 @@ class Project:
         self.cost_estimate = cost_estimate
         self.completion = completion
 
-    def __repr__(self):
-        return (f"{self.name}, start:{self.start_date}, priority={self.priority}, estimate={self.cost_estimate}, "
-                f"completion={self.completion}")
+    def __str__(self):
+        return (f"{self.name} ({self.start_date}) - priority: {self.priority}, "
+                f"cost: {self.cost_estimate}, completion: {self.completion}%")
 
+    def is_completed(self):
+        return self.completion == 100
