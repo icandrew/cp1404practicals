@@ -3,6 +3,8 @@ CP1404 Practical 07 - Project Management
 Estimated time to complete 150min
 Time to complete -
 """
+from datetime import datetime
+from project import Project
 
 FILENAME = "projects.txt"
 
@@ -22,7 +24,7 @@ def main():
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
-            print("Load Projects")
+            load_projects(FILENAME)
         elif choice == "S":
             print("Save Projects")
         elif choice == "D":
@@ -38,6 +40,17 @@ def main():
         print(MENU)
         choice = input(">>> ").upper()
     print("Thank you for using custom-built project management software.")
+
+
+def load_projects(FILENAME):
+    projects = []
+    with open(FILENAME, 'r') as in_file:
+        in_file.readline()
+        for line in in_file:
+            parts = line.strip().split('\t')
+            project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))
+            projects.append(project)
+    return projects
 
 
 main()
