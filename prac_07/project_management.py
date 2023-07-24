@@ -1,7 +1,7 @@
 """
 CP1404 Practical 07 - Project Management
 Estimated time to complete 150min
-Time to complete -
+Time to complete - 3hours 42mins
 """
 import datetime
 from project import Project
@@ -27,13 +27,13 @@ def main():
         if choice == "L":
             projects = load_projects(FILENAME)
         elif choice == "S":
-            print("Save Projects")
+            save_projects(projects, FILENAME)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
             filter_projects(projects)
         elif choice == "A":
-            print("Add New Projects")
+            add_project(projects)
         elif choice == "U":
             update_project(projects)
         else:
@@ -115,6 +115,34 @@ def filter_projects(projects):
     print(f"That day is/was {date.strftime('%A')}")
     print(date.strftime("%d/%m/%Y"))
 
+
+def add_project(projects):
+    print("Let's add a new project")
+    project_name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = input("Priority: ")
+    try:
+        cost_estimate = float(input("Cost estimate: $"))
+    except ValueError:
+        print("Invalid cost estimate")
+        return
+    try:
+        project_status = int(input("Percent complete: "))
+    except ValueError:
+        print("Invalid percentage")
+        return
+
+    new_project = Project(project_name, start_date, int(priority), cost_estimate, project_status)
+    projects.append(new_project)
+    print(f"Project {new_project} added")
+
+
+def save_projects(projects, FILENAME):
+    with open(FILENAME, "w", encoding="utf-8") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion\n")
+        for project in projects:
+            out_file.write(f"{project.name}\t{project.start_date}\t{project.priority}"
+                           f"\t{project.cost_estimate}\t{project.completion}\n")
 
 
 main()
