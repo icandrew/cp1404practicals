@@ -56,9 +56,14 @@ def load_projects(FILENAME):
 
 def display_projects(projects):
     if len(projects) > 0:
-        print("Projects:")
+        print("Incomplete Projects:")
         for project in projects:
-            print(f"{project}")
+            if not project.is_completed():
+                print(f"{project}")
+        print("Completed Projects:")
+        for project in projects:
+            if project.is_completed():
+                print(f"{project}")
     else:
         print("No projects available.")
 
