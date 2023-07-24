@@ -20,15 +20,16 @@ MENU = """
 
 
 def main():
+    projects = load_projects(FILENAME)
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
-            load_projects(FILENAME)
+            projects = load_projects(FILENAME)
         elif choice == "S":
             print("Save Projects")
         elif choice == "D":
-            print("Display Projects")
+            display_projects(projects)
         elif choice == "F":
             print("Filter Projects")
         elif choice == "A":
@@ -53,4 +54,18 @@ def load_projects(FILENAME):
     return projects
 
 
+def display_projects(projects):
+    if len(projects) > 0:
+        print("Projects:")
+        for project in projects:
+            print(f"{project}")
+    else:
+        print("No projects available.")
+
+
 main()
+
+
+
+main()
+
