@@ -3,7 +3,7 @@ CP1404 Practical 07 - Project Management
 Estimated time to complete 150min
 Time to complete -
 """
-from datetime import datetime
+import datetime
 from project import Project
 
 FILENAME = "projects.txt"
@@ -31,11 +31,11 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            print("Filter Projects")
+            filter_projects(projects)
         elif choice == "A":
             print("Add New Projects")
         elif choice == "U":
-            print("Update Projects")
+            update_project(projects)
         else:
             print("Choice not valid")
         print(MENU)
@@ -68,9 +68,53 @@ def display_projects(projects):
         print("No projects available.")
 
 
-main()
+def update_project(projects):
+    for i, project in enumerate(projects):
+        print(f"{i}. {project}")
+
+    choice = int(input("Project Choice: "))
+    while choice > len(projects) or choice < 0:
+        try:
+            print("Invalid Choice")
+            choice = int(input("Project Choice: "))
+        except ValueError:
+            print("Invalid Choice")
+    print(f"{projects[choice]}")
+    new_percentage = input("New Percentage: ")
+    new_percentage = check_new_percentage(new_percentage)
+    projects[choice].completion = int(new_percentage)
+    new_priority = input("New Priority: ")
+    new_priority = check_new_priority(new_priority)
+    projects[choice].priority = int(new_priority)
+    print(f"Project {choice} updated to {projects[choice]}")
+
+
+def check_new_percentage(new_percentage):
+    while not new_percentage.isdigit() or int(new_percentage) < 0 or int(new_percentage) > 100:
+        try:
+            print("Percentage must be an integer between 0 and 100.")
+            new_percentage = input("New Percentage: ")
+        except ValueError:
+            print("Invalid Percentage")
+    return new_percentage
+
+
+def check_new_priority(new_priority):
+    while not new_priority.isdigit() or int(new_priority) < 0 or int(new_priority) > 10:
+        try:
+            print("Priority must be an integer between 0 and 10.")
+            new_priority = input("New Priority: ")
+        except ValueError:
+            print("Invalid Percentage")
+    return new_priority
+
+
+def filter_projects(projects):
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    print(f"That day is/was {date.strftime('%A')}")
+    print(date.strftime("%d/%m/%Y"))
 
 
 
 main()
-
