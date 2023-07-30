@@ -1,3 +1,9 @@
+"""
+CP1404 Practical 08 - Convert Miles to Kilometers
+Estimated time to complete 120min
+Time to complete - 118min
+"""
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
@@ -26,14 +32,14 @@ class ConvertMilesToKilometerApp(App):
 
     def handle_update(self, text, change):
         try:
-            current_miles = float(text)
-            updated_miles = current_miles + change
-            self.user_input = str(updated_miles)
-            self.root.ids.user_input.text = str(updated_miles)
+            current_miles = float(text) if text else 0.0
         except ValueError:
-            pass
+            current_miles = 0.0
+        updated_miles = current_miles + change
+        self.user_input = str(updated_miles)
+        self.root.ids.user_input.text = str(updated_miles)
 
-    def convert_str_to_int(self, value):
+    def convert_str_to_int(self):
         try:
             value = float(self.root.ids.user_input.text)
         except ValueError:
