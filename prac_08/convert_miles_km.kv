@@ -5,6 +5,7 @@ BoxLayout:
             id: user_input
             text: ''
             font_size: 48
+            on_text: app.handle_calculate(user_input.text)
         BoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.25
