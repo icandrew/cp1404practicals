@@ -10,12 +10,14 @@ BoxLayout:
             size_hint_x: 0.25
             Button:
                 text: 'Up'
+                on_press: app.handle_update(user_input.text, 1)
             Button:
                 text: 'Down'
+                on_press: app.handle_update(user_input.text, -1)
     Button:
         text: 'Convert miles to km'
         on_press: app.handle_calculate(user_input.text)
     Label:
         id: output_label
-        text: 'Sample1'
+        text: app.user_input
         color: 0.965, 0.922, 0.078, 1
