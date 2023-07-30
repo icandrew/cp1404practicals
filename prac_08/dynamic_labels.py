@@ -1,7 +1,7 @@
 """
 CP1404 Practical 08 - Dynamic Labels
 Estimated time to complete 120min
-Time to complete -
+Time to complete - 38mins
 """
 
 from kivy.app import App
