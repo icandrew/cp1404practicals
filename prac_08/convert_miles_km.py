@@ -3,6 +3,8 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.properties import StringProperty
 
+MILES_TO_KILOMETERS = 1.609344
+
 
 class ConvertMilesToKilometerApp(App):
     """ SquareNumberApp is a Kivy App for squaring a number """
@@ -17,7 +19,7 @@ class ConvertMilesToKilometerApp(App):
 
     def handle_calculate(self, value):
         try:
-            result = float(value) * 1.609344  # 1mile = 1.609344km
+            result = float(value) * MILES_TO_KILOMETERS  # 1mile = 1.609344km
             self.root.ids.output_label.text = f"{result:.5f}"
         except ValueError:
             pass
