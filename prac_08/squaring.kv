@@ -2,10 +2,16 @@ BoxLayout:
     orientation: 'vertical'
     BoxLayout:
         TextInput:
+            id: user_input
             text: ''
+            multiline: False
+            font_size: 42
         Button:
             text: 'Square'
+            on_press: app.handle_calculate(user_input.text)
         Label:
-            text: 'Output'
+            id: output_label
+            font_size: 42
+            color: 0.964, 0.592, 0.600, 1  # hex color #F69799
     Label:
         text: 'Enter a number and press "Square"'
