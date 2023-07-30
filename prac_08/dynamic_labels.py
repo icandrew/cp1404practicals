@@ -1,7 +1,7 @@
 """
 CP1404 Practical 08 - Dynamic Labels
 Estimated time to complete 120min
-Time to complete - 
+Time to complete -
 """
 
 from kivy.app import App
@@ -39,6 +39,7 @@ class DynamicWidgetsApp(App):
 
     def clear_all(self):
         self.root.ids.labels_box.clear_widgets()
+        self.root.ids.status_label.text = ''
 
 
 DynamicWidgetsApp().run()
