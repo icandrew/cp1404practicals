@@ -12,6 +12,7 @@ MENU = "q)uit, c)hoose taxi, d)rive"
 def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     bill_to_date = 0
+    current_taxi = None
     print("Let's drive")
     print(MENU)
     choice = input(">>> ").lower()
@@ -19,13 +20,12 @@ def main():
         if choice == "c":
             print("Taxis available: ")
             display_taxis(taxis)
-            break
         elif choice == "d":
             pass
         else:
             print("Invalid option")
             break
-    print(f"Total trip cost: ")
+    print(f"Total trip cost: {bill_to_date}")
     print("Taxis are now:")
     display_taxis(taxis)
 
