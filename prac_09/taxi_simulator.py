@@ -25,6 +25,9 @@ def main():
         else:
             print("Invalid option")
             break
+    print(f"Total trip cost: ")
+    print("Taxis are now:")
+    display_taxis(taxis)
 
 
 def display_taxis(taxis):
