@@ -7,6 +7,7 @@ from taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
     """Initialize SilverServiceTaxi, that inherits from Taxi."""
+    flagfall = 4.50
 
     def __init__(self, fanciness=float, **kwargs):
         super().__init__(**kwargs)
