@@ -39,6 +39,7 @@ def display_taxis(taxis):
         print(f"{i} - {taxi}")
 
 
+
 def select_taxi(taxis):
     try:
         selected_taxi = int(input("Choose Taxi:"))
