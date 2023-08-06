@@ -22,6 +22,9 @@ def main():
             break
         elif choice == "d":
             pass
+        else:
+            print("Invalid option")
+            break
 
 
 def display_taxis(taxis):
