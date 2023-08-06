@@ -9,8 +9,8 @@ class SilverServiceTaxi(Taxi):
     """Initialize SilverServiceTaxi, that inherits from Taxi."""
     flagfall = 4.50
 
-    def __init__(self, fanciness=float, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, name, fuel, fanciness=float):
+        super().__init__(name, fuel)
 
         self.fanciness = fanciness
         self.price_per_km *= fanciness
