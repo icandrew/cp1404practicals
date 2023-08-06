@@ -6,7 +6,7 @@ Band Class
 class Band:
     def __init__(self, name=""):
         self.name = name
-        pass
+        self.musicians = []
 
     def add(self):
         pass
