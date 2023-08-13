@@ -54,6 +54,27 @@ def run_tests():
     assert test_car.fuel == 25, "test_car fuel addition not working correctly"
 
 
+def format_as_sentence(phrase):
+    """
+    Format a phrase as a sentence, starting with a capital and ending with a full stop.
+
+    Examples:
+    >>> format_as_sentence("hello")
+    'Hello.'
+    >>> format_as_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_as_sentence("programming 2 is about to end")
+    'Programming 2 is about to end.'
+    """
+    formatted_phrase = phrase.strip()
+    if not formatted_phrase:
+        return ""
+    formatted_phrase = formatted_phrase[0].upper() + formatted_phrase[1:]
+    if not formatted_phrase.endswith('.'):
+        formatted_phrase += '.'
+    return formatted_phrase
+
+
 run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
