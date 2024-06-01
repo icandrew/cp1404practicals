@@ -9,11 +9,13 @@ MENU = """(G)et a valid score
 
 
 def main():
+    valid_score = get_valid_score()
     print(MENU)
     choice = input(">>> ")
     while choice.upper() != "Q":
         if choice.upper() == "G":
-            print("G option")
+            valid_score = get_valid_score()
+            print(f"Your score is: {valid_score}")
         elif choice.upper() == "P":
             print("P option")
         elif choice.upper() == "S":
@@ -23,6 +25,15 @@ def main():
         print(MENU)
         choice = input(">>> ")
     print("farewell")
+
+
+def get_valid_score():
+    """Prompt the user to enter a score between 0 and 100, validating the input."""
+    score = int(input("Enter score: "))
+    while score < 0 or score > 100:
+        print("Score must be between 0 and 100")
+        score = int(input("Enter score: "))
+    return score
 
 
 main()
