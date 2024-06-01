@@ -2,23 +2,19 @@
 Shop Calculator
 """
 
-item_count = int(input("Number of items: "))
+number_of_items = int(input("Number of items: "))
 total_price = 0.0  # Initialize total price as a float
 DISCOUNT = 0.10
+DISCOUNT_THRESHOLD = 100
 
-while item_count < 0:
+while number_of_items < 0:
     print("Invalid number of items!")
-    item_count = int(input("Number of items: "))
-for item in range(item_count):
-    price = float(input(f"Price of item {item + 1}: "))
+    number_of_items = int(input("Number of items: "))
+for item in range(0, number_of_items):
+    price = float(input("Price of item: "))
     total_price += price
-if total_price > 100:
-    discount_amount = total_price * DISCOUNT
-    discount_price = total_price - discount_amount
-    print(f"Total price for {item_count} items is ${discount_price:.2f}")
+if total_price > DISCOUNT_THRESHOLD:
+    total_price *= (1 - DISCOUNT)
+    print(f"Total price for {number_of_items} items is ${total_price:.2f} <- 10% discount is applied")
 else:
-    print(f"Total price for {item_count} items is ${total_price:.2f}")
-
-
-
-
+    print(f"Total price for {number_of_items} items is ${total_price:.2f}")
