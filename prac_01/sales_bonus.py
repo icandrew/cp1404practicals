@@ -5,16 +5,15 @@ If sales are $1,000 or over, the bonus is 15%.
 """
 
 sales = float(input("Enter sales: $"))
-percentage = 0
+UPPER_THRESHOLD = 0.15
+LOWER_THRESHOLD = 0.10
+CEILING_SALES = 1000
 while sales >= 0:
-    if sales <= 999:
-        percentage = 0.1
-        bonus = percentage * sales
-        print(f"Your bonus is ${bonus}")
-        sales = float(input("Enter sales: $"))
-    elif sales >= 1000:
-        percentage = 0.15
-        bonus = percentage * sales
-        print(f"Your bonus is ${bonus}")
-        sales = float(input("Enter sales: $"))
+    if sales >= CEILING_SALES:
+        bonus = sales * UPPER_THRESHOLD
+    else:
+        bonus = sales * LOWER_THRESHOLD
+
+    print(f"Your bonus is ${bonus}")
+    sales = float(input("Enter sales: $"))
 print(f"Invalid input")
