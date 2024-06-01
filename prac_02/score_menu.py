@@ -17,7 +17,8 @@ def main():
             valid_score = get_valid_score()
             print(f"Your score is: {valid_score}")
         elif choice.upper() == "P":
-            print("P option")
+            marks = evaluate_mark(valid_score)
+            print(f"Your score of {valid_score} is marked: {marks}")
         elif choice.upper() == "S":
             print("P option")
         else:
@@ -34,6 +35,16 @@ def get_valid_score():
         print("Score must be between 0 and 100")
         score = int(input("Enter score: "))
     return score
+
+
+def evaluate_mark(score):
+    """Evaluates the marks based on the provided score"""
+    if score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
 
 
 main()
