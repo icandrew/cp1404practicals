@@ -48,10 +48,9 @@ def evaluate_mark(score):
         return "Bad"
 
 
-def display_stars(score):
+def display_stars(number_of_stars):
     """Displays number of '*' based on the provided score"""
-    stars = "*" * score
-    print(stars)
+    print("*" * number_of_stars)
 
 
 main()
