@@ -16,15 +16,14 @@ print("\n--------------------------")
 
 # print n stars. Ask the user for a number, then print that many stars (*), all on one line.
 print("C:")
-count = int(input('Number of stars: '))
-for star in range(count):
+number_of_stars = int(input('Number of stars: '))
+for star in range(number_of_stars):
     print("*", end='')
 print("\n--------------------------")
 
 # print n lines of increasing stars. Using the same number as above, print lines of increasing stars, starting at 1
 # with no blank line.
 print("D:")
-count = int(input('Number of stars: '))
-for star in range(1, count + 1):
+for star in range(1, number_of_stars + 1):
     print("*" * star)
 print("--------------------------")
