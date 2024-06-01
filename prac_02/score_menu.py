@@ -9,6 +9,7 @@ MENU = """(G)et a valid score
 
 
 def main():
+    """Run the main menu-driven program for score input, evaluation, and display '*'."""
     valid_score = get_valid_score()
     print(MENU)
     choice = input(">>> ")
@@ -20,7 +21,7 @@ def main():
             marks = evaluate_mark(valid_score)
             print(f"Your score of {valid_score} is marked: {marks}")
         elif choice.upper() == "S":
-            print("P option")
+            display_stars(valid_score)
         else:
             print("Invalid choice")
         print(MENU)
@@ -45,6 +46,12 @@ def evaluate_mark(score):
         return "Passable"
     else:
         return "Bad"
+
+
+def display_stars(score):
+    """Displays number of '*' based on the provided score"""
+    stars = "*" * score
+    print(stars)
 
 
 main()
